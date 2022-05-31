@@ -1,0 +1,14 @@
+server:
+  port: 8189
+  servlet:
+    context-path: /birthdays-gifts
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/birthdays_gifts
+    username: root
+    password: helnov
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true

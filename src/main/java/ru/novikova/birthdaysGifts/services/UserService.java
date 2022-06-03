@@ -7,10 +7,13 @@ import org.springframework.stereotype.Service;
 import ru.novikova.birthdaysGifts.entities.User;
 import ru.novikova.birthdaysGifts.entities.community.CommunityMember;
 import ru.novikova.birthdaysGifts.entities.community.CommunityMemberType;
-import ru.novikova.birthdaysGifts.entities.community.Family;
-import ru.novikova.birthdaysGifts.entities.community.Friend;
+import ru.novikova.birthdaysGifts.entities.community.family.Family;
+import ru.novikova.birthdaysGifts.entities.community.friends.Friend;
+import ru.novikova.birthdaysGifts.entities.gift.Gift;
 import ru.novikova.birthdaysGifts.repositories.CommunityMembersRepository;
 import ru.novikova.birthdaysGifts.repositories.UserRepository;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -34,5 +37,9 @@ public class UserService {
                 communityMember = new Friend(user);
         }
         return communityMember;
+    }
+
+    public List<Gift> findAllGifts() {
+        return userRepository.findAllGifts();
     }
 }

@@ -2,12 +2,12 @@ package ru.novikova.birthdaysGifts.controllers;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.novikova.birthdaysGifts.entities.User;
+import ru.novikova.birthdaysGifts.entities.gift.Gift;
 import ru.novikova.birthdaysGifts.services.UserService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -18,5 +18,10 @@ public class UserController {
     @PostMapping
     private ResponseEntity<?> createNewUser(@RequestBody User user) {
         return userService.createNewUser(user);
+    }
+
+    @GetMapping
+    private List<Gift> getStartPage() {
+        return userService.findAllGifts();
     }
 }

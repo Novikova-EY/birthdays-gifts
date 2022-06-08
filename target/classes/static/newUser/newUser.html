@@ -1,0 +1,17 @@
+<div style="margin: 50px">
+    <h2>Создание нового пользователя</h2>
+    <p></p>
+    <form novalidate ng-submit="saveNewUser()">
+        <div class="mb-3">
+            <label for="title" class="form-label"><strong>Имя</strong></label>
+            <input type="text" class="form-control" id="title" placeholder="Имя" ng-model="newUser.name">
+        </div>
+        <p></p>
+        <div class="mb-3">
+            <label for="date" class="form-label"><strong>Дата рождения</strong></label>
+            <input type="date" class="form-control" id="date" placeholder="Дата рождения" ng-model="newUser.birthdate">
+        </div>
+        <p></p>
+        <button class="btn btn-outline-primary" style="width: 100%; font-weight:bold" type="submit">Создать</button>
+    </form>
+</div>
